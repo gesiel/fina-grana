@@ -1,3 +1,9 @@
+PT-BR
+> Este software é distribuído sob os termos da Sustainable Use License (SUL). Uso comercial é expressamente proibido sem autorização prévia. Consulte o arquivo LICENSE para detalhes.
+
+EN
+> This software is distributed under the terms of the Sustainable Use License (SUL). Commercial use is expressly prohibited without prior authorization. See the LICENSE file for details.
+
 # FinaGrana
 
 To start your Phoenix server:
