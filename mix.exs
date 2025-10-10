@@ -35,10 +35,11 @@ defmodule FinaGrana.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:ash_postgres, "~> 2.0"},
       {:sourceror, "~> 1.8", only: [:dev, :test]},
+      {:ash_postgres, "~> 2.0"},
+      {:ash_phoenix, "~> 2.0"},
       {:ash, "~> 3.0"},
-      {:phoenix, "~> 1.8.0-rc.4", override: true},
+      {:phoenix, "~> 1.8.1"},
       {:phoenix_ecto, "~> 4.5"},
       {:ecto_sql, "~> 3.13"},
       {:postgrex, ">= 0.0.0"},
