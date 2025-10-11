@@ -25,5 +25,9 @@ defmodule FinaGrana.Core.Tenant do
     create :create do
       accept [:name]
     end
+
+    read :read do
+      primary? true
+    end
   end
 end
