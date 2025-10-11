@@ -22,12 +22,7 @@ defmodule FinaGrana.Core.Tenant do
   end
 
   actions do
-    create :create do
-      accept [:name]
-    end
-
-    read :read do
-      primary? true
-    end
+    defaults [:create, :read, :update]
+    default_accept [:name]
   end
 end

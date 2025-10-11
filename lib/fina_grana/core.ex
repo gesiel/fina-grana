@@ -7,6 +7,7 @@ defmodule FinaGrana.Core do
       define :create_tenant, action: :create
       define :read_tenants, action: :read
       define :get_tenant_by_id, action: :read, get_by: :id
+      define :update_tenant, action: :update
     end
   end
 end
