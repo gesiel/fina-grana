@@ -45,7 +45,8 @@ config :spark,
 
 config :fina_grana,
   ecto_repos: [FinaGrana.Repo],
-  generators: [timestamp_type: :utc_datetime]
+  generators: [timestamp_type: :utc_datetime],
+  ash_domains: [FinaGrana.Core]
 
 # Configures the endpoint
 config :fina_grana, FinaGranaWeb.Endpoint,
