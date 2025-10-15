@@ -1,6 +1,10 @@
 defmodule FinaGranaWeb.Router do
   use FinaGranaWeb, :router
 
+  pipeline :graphql do
+    plug AshGraphql.Plug
+  end
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -12,6 +16,17 @@ defmodule FinaGranaWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  scope "/gql" do
+    pipe_through [:graphql]
+
+    forward "/playground", Absinthe.Plug.GraphiQL,
+      schema: Module.concat(["FinaGranaWeb.GraphqlSchema"]),
+      socket: Module.concat(["FinaGranaWeb.GraphqlSocket"]),
+      interface: :simple
+
+    forward "/", Absinthe.Plug, schema: Module.concat(["FinaGranaWeb.GraphqlSchema"])
   end
 
   scope "/", FinaGranaWeb do
