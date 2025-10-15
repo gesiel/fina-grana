@@ -2,7 +2,7 @@ defmodule FinaGranaWeb.GraphqlSchema do
   use Absinthe.Schema
 
   use AshGraphql,
-    domains: []
+    domains: [FinaGrana.Core]
 
   import_types Absinthe.Plug.Types
 

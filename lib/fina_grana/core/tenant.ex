@@ -2,11 +2,21 @@ defmodule FinaGrana.Core.Tenant do
   use Ash.Resource,
     otp_app: :fina_grana,
     domain: FinaGrana.Core,
-    data_layer: AshPostgres.DataLayer
+    data_layer: AshPostgres.DataLayer,
+    extensions: [AshGraphql.Resource]
+
+  graphql do
+    type :tenant
+  end
 
   postgres do
     table "tenants"
     repo FinaGrana.Repo
+  end
+
+  actions do
+    defaults [:create, :read, :update]
+    default_accept [:name]
   end
 
   attributes do
@@ -19,10 +29,5 @@ defmodule FinaGrana.Core.Tenant do
 
     create_timestamp :created_at
     update_timestamp :updated_at
-  end
-
-  actions do
-    defaults [:create, :read, :update]
-    default_accept [:name]
   end
 end
